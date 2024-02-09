@@ -1,0 +1,12 @@
+version: '3'
+services:
+  model-test:
+    depends_on:
+      - mongo
+    build: 
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../:/src
+  mongo:
+    image: mongo
